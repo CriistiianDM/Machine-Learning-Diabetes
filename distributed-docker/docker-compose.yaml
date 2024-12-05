@@ -1,0 +1,12 @@
+
+services:
+
+  s3:
+      build:
+        context: datasources/
+        dockerfile: Dockerfile
+      container_name: s3_app
+      ports:
+        - "5001:5001"
+
+volumes: {}
