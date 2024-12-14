@@ -8,5 +8,9 @@ services:
       container_name: s3_app
       ports:
         - "5001:5001"
+      environment:
+        - VALID_TOKEN=${VALID_TOKEN}
+        - FILE_PATH=${FILE_PATH}
+        - SECRET_KEY=${SECRET_KEY}
 
 volumes: {}
