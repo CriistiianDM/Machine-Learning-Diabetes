@@ -38,6 +38,7 @@ class Learning:
         model.fit(X_train, y_train)
 
         # Evaluación
-        y_pred = model.predict(X_test)
+        #y_pred = model.predict(X_test)
 
-        return accuracy_score(y_test, y_pred)
+        #return accuracy_score(y_test, y_pred)
+        return model

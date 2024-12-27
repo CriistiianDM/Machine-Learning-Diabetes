@@ -12,6 +12,8 @@ from cryptography.hazmat.primitives import padding
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from learning.learning import Learning
+from upload.upload import UploadModel
+from sagemakerr.sagemakerr import SageMakerr
 
 VALID_TOKEN = os.getenv("VALID_TOKEN")
 FILE_PATH = os.getenv("FILE_PATH")
@@ -27,11 +29,18 @@ app = Flask(__name__)
 def init():
     dataTraining = request_data()
     decrypt = decrypt_data(dataTraining['data'])
-   
-    learning_instance = Learning(decrypt)  
-    accuracy = learning_instance.learnig()
 
-    return jsonify({"accuracy": accuracy}), 200
+    # Upload S3 Model
+    # learning_instance = Learning(decrypt)
+    # uploadModel = UploadModel(learning_instance)
+    # uploadModel.upload()
+    # accuracy = learning_instance.learnig()
+
+    # Upload Model to sagemaker
+    sagemarker_instance = SageMakerr()
+    sagemarker_instance.deploy_model()
+
+    return jsonify({"accuracy": 500}), 200
 
 
 def request_data():
