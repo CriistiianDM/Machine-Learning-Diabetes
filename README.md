@@ -31,6 +31,7 @@ Arquitecture Local:
 
 ![Diagrama en blanco (1)](https://github.com/user-attachments/assets/5f6f3d7f-d127-4ac0-aaac-71f5d481e6c4)
 
+Arquiteture Deployment EC2:
 
 
 Desployment k8:
